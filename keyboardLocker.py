@@ -40,17 +40,20 @@ def on_press(key):
                     typed_text = (''.join(typed_characters)).lower()
                     backspace()
             #print (typed_text)
-            if 'alsk' in typed_text:
-                locked = not locked
+            if 'myUnlock' in typed_text:
+                locked = False
                 typed_characters = []
-                if locked:
-                    backspace()
-                    time.sleep(0.1)
-                    backspace()
-                    time.sleep(0.1)
-                    backspace()
-                    time.sleep(0.1)
-                    backspace()
+                
+            if 'pqow' in typed_text:
+                locked = True
+                typed_characters = []
+                backspace()
+                time.sleep(0.1)
+                backspace()
+                time.sleep(0.1)
+                backspace()
+                time.sleep(0.1)
+                backspace()
                 # You can add your handling logic here (e.g., prevent further input)
         #print(locked)
         #print(typed_characters)
@@ -70,4 +73,3 @@ with Listener(
         on_press=on_press,
         on_release=on_release) as listener:
     listener.join()
-
